@@ -7,10 +7,10 @@ class Admin extends CI_Controller{
 
 		parent::__construct();
 
-		$this->load->model('login_model');
+		$this->load->model('Login_model');
 		$tipo_usuario = 1;
 
-		if(!$this->login_model->estaLogado($tipo_usuario)){
+		if(!$this->Login_model->estaLogado($tipo_usuario)){
 			redirect(base_url());
 		}
 	}
@@ -19,7 +19,8 @@ class Admin extends CI_Controller{
 		$dados = array();
 
 		$dados['titulo'] = 'Administrador';
-
-		$this->load->view('contents/login', $dados);
+		$dados['nome_view'] = 'contents/admin';
+		$this->load->view('layout_admin', $dados);
+		//$this->load->view('contents/admin', $dados);
 	}
 }

@@ -5,16 +5,16 @@ class Login extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
 
-		// $this->load->model('Usuario_model');
+		$this->load->model('Login_model');
 		// $this->load->library('encrypt');
 
-		// if(isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] == 1){
-		// 	redirect('Contratos');
-		// }elseif(isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] == 2){
-		// 	redirect('aluno');
-		// }elseif(isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] == 3){
-		// 	redirect('supervisor');
-		// }
+		if(isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] == 1){
+			redirect('admin');
+		}elseif(isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] == 2){
+			redirect('coord');
+		}elseif(isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] == 3){
+			redirect('prof');
+		}
 	}
 
 	public function index(){
@@ -33,7 +33,7 @@ class Login extends CI_Controller{
 			$usuario = $this->input->post('usuario');
 			$senha = $this->input->post('senha');
 
-			$retorno = $this->login_model->verificarUsuario($usuario, $senha);
+			$retorno = $this->Login_model->verificarUsuario($usuario, $senha);
 
 			// Se o usuário não existe
 			if($retorno == '0'){
@@ -77,7 +77,7 @@ class Login extends CI_Controller{
 				$this->session->set_userdata($usuarios);
 
 				echo "3";
-			}
+			}else{var_dump($retorno);}
 		}
 	}
 }

@@ -65,7 +65,7 @@
 										<span class="input-group-addon">
 											<i class="material-icons">face</i>
 										</span>
-										<div class="form-group is-empty"><input type="text" name="usuario" id="usuario" class="form-control" aria-describedby="usuario" title="Insira seu código de professor!" pattern="[0-9]+$"	 required="" id="usuario" maxlength="20" placeholder="Código professor"><span class="material-input"></span></div>
+										<div class="form-group is-empty"><input type="text" name="usuario" id="usuario" class="form-control" aria-describedby="usuario" title="Insira seu código de professor!" required="" id="usuario" maxlength="20" placeholder="Código professor"><span class="material-input"></span></div>
 									</div>
 
 									<div class="input-group">
@@ -118,13 +118,13 @@
 					type: 'post',
 					data: $('#form_login').serialize(),
 					success: function(resultado){
-						//	alert(JSON.stringify(resultado));
+							//alert(JSON.stringify(resultado));
 						switch(resultado){
 							
 							case '0':
 								// Erro de usuário
 				//				alert('dfgdfg');
-								sweetAlert("O usuário informado não existe."," Por favor, digite novamente!");
+								sweetAlert("Login ou senha incorretos."," Por favor, digite novamente!");
 								// $('#conteudo_erro').html('O usuário informado não existe. Por favor, digite novamente!');
 								// $('#erro').appendTo('body');
 								// $('#erro').modal('show');
