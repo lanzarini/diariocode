@@ -28,7 +28,7 @@ class Login_model extends CI_Model{
 				FROM 
 					usuario 
 				WHERE 
-					login = $usuarioesc AND senha = $senhaesc";
+					login = $usuarioesc AND senha = '$senhaesc'";
 
 			$query2 = $this->db->query($sql2);
 

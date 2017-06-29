@@ -140,7 +140,7 @@
 							break;
 							
 							case '3': // professor
-								window.location.href="professor";
+								window.location.href="prof";
 							break;
 						}	
 					}

@@ -11,7 +11,7 @@ class configuracoes_model extends CI_Model{
 		}
 
 		public function connectdb(){
-			mssql_connect("10.10.10.30", "WEBGIZESTAGIOS", "*y(&rVc7") or die ("Não foi possivel conectar");
+			mssql_connect("10.10.10.30", "WEBGIZSGD", "mw7Hggci") or die ("Não foi possivel conectar");
 		} 
 		 
 		 

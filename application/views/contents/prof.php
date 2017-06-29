@@ -12,19 +12,31 @@
 							<div class="col-sm-7">
 					            <div class="form-group">
 					                <label class="control-label">Período do pedido:</label> 
-					                <select required="required" class="form-control" name="Tipodevaga" data-toggle="tooltip" title="Tipo da vaga">
+					                <select required="required" class="form-control" name="periodo" data-toggle="tooltip" title="Período letivo">
 					                   <?php 
 					      				foreach($per_letivos as $pl):
 
 					      					# Novo período letivo
 					      					$npl = explode('_', $pl->name); 
-											$npl = $npl[1].'/'.$npl[2]; 
+					      					$npl2 = explode('-', $npl[2]); 
+					      					if(!$npl2[1]){
+					      						$npl = 'Ano: '. $npl[2].'/ Semestre: '.$npl[1]; 
+					      						?>
+					      						<option value="<?php echo $pl->name; ?>"><?php echo $npl; ?></option>
+					      						<?php
+					      					}
 										?>
-					      					<option value="<?php echo $pl->name; ?>"><?php echo $npl; ?></option>
 					      				<?php
 							      		endforeach; 
 					      				?>
 					                </select>
+					            </div>
+					        </div>
+					        <div class="col-sm-7">
+					            <div class="form-group">
+					             	<label class="control-label">Disciplinas do período:</label> 
+				               		<select required="required" class="form-control" name="disciplina" data-toggle="tooltip" title="Disciplinas para abertura do diário">
+				                	</select>
 					            </div>
 					        </div>
 						</form>
@@ -50,3 +62,4 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/scripts_prof.js"></script>
