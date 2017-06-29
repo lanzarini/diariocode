@@ -36,6 +36,26 @@ class Giz_model extends CI_Model{
 	        return $array;  	
 	    }
 
+		public function getnomeprof($usuario){
+
+
+	        $this->Configuracoes_model->connectdb();
+
+	        $sql = "
+	            SELECT 
+	                pfg_nome as nome
+	            FROM 
+	               UNIMONTES_GEN..profgen 
+	            WHERE 
+	                cod_prof='$usuario'
+	        "; 	
+
+	         $resultado = mssql_query($sql);
+	         $cod=mssql_fetch_array($result);
+	         return $cod['nome'];
+	         
+	    }
+
 	    public function disciplinasporperiodo($periodo){
 
 	    	$array = array();

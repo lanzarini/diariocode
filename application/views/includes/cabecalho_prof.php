@@ -47,20 +47,20 @@
 		    -->
 
 			<div class="logo">
-				<a href="<?php echo base_url(); ?>contratos" class="simple-text">
+				<a href="<?php echo base_url(); ?>" class="simple-text">
 					Unimontes
 				</a>
 			</div>
 	    	<div class="sidebar-wrapper">
 	            <ul class="nav">
 	                <li id="link_contratos">
-	                    <a href="<?php echo base_url(); ?>contratos">
+	                    <a href="<?php echo base_url(); ?>prof">
 							<i class="material-icons">assignment</i>
 	                        <p>Realizar pedido</p>
 	                    </a>
 	                </li>
 	                <li id="link_estagios">
-	                    <a href="<?php echo base_url(); ?>estagios">
+	                    <a href="<?php echo base_url(); ?>prof/pedidos">
 	                        <i class="material-icons">work</i>
 	                        <p>Ver pedidos</p>
 	                    </a>

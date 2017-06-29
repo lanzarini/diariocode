@@ -6,13 +6,14 @@
 
                 <div class="panel-body">
 					
-						<form id="form_supervisor" method="post">
+						<form id="form_pedido" method="post">
 							<label>Pedido de :NOME PROFESSOR</label>
 							<br>
-							<div class="col-sm-7">
-					            <div class="form-group">
+							<div class=" row ">
+					            <div class="form-group col-sm-7 col-md-offset-1">
 					                <label class="control-label">Período do pedido:</label> 
 					                <select required="required" class="form-control" name="periodo" data-toggle="tooltip" title="Período letivo">
+					                   <option value="testeper">testeper</option>
 					                   <?php 
 					      				foreach($per_letivos as $pl):
 
@@ -22,7 +23,7 @@
 					      					if(!$npl2[1]){
 					      						$npl = 'Ano: '. $npl[2].'/ Semestre: '.$npl[1]; 
 					      						?>
-					      						<option value="<?php echo $pl->name; ?>"><?php echo $npl; ?></option>
+					      						<option value="<?php echo $npl; ?>"><?php echo $npl; ?></option>
 					      						<?php
 					      					}
 										?>
@@ -32,13 +33,44 @@
 					                </select>
 					            </div>
 					        </div>
-					        <div class="col-sm-7">
-					            <div class="form-group">
+					        <div class="row ">
+					            <div class="form-group col-sm-7 col-md-offset-1">
 					             	<label class="control-label">Disciplinas do período:</label> 
-				               		<select required="required" class="form-control" name="disciplina" data-toggle="tooltip" title="Disciplinas para abertura do diário">
+				               		<select required="required" class="form-control" readonly name="disciplina" data-toggle="tooltip" title="Disciplinas para abertura do diário">
+				                	<option value="testedis">testedis</option>
 				                	</select>
 					            </div>
+					            <div class="form-group col-sm-5 ">
+					             	<label class="control-label">Curso da disciplina:</label> 
+	                                <input id="idcurso" form='form_pedido' type="hidden" class="form-control" name="idcurso" value='testeidcurso' >	                                
+	                                <input id="curso" form='form_pedido' type="text" class="form-control" name="curso" value='testecurso' readonly>
+					            </div>
 					        </div>
+
+					       
+					        <div class="row ">
+					            <div class="form-group col-sm-7 col-md-offset-1">
+					             	<label class="control-label">Agendamento:</label> 
+	                                <input id="agendamento" type="datetime-local" class="form-control" name="agendamento"  required>
+	                                <span>O horário de agendamento deve ser em dias úteis e horário de 08:00 às 16:00</span>
+
+					            </div>
+
+					        </div>
+   					        <div class="row ">
+					            <div class="form-group col-sm-12">
+					             	<label class="control-label">Justificativa:</label> 
+	                                <textarea id='just' rows='3' class="form-control" name="justificativa"  required></textarea>
+					            </div>
+
+					        </div>
+
+					        <div class="row"><!--div aluno -->
+		                        <div class="form-group col-sm-6 ">
+		                            <input type="submit" value="Enviar Pedido" class="btn btn-primary" >
+		                        </div>
+		                    </div>
+					        
 						</form>
 
 						<!-- <a href="" class="list-group-item">

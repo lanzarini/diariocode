@@ -47,7 +47,7 @@
 		    -->
 
 			<div class="logo">
-				<a href="<?php echo base_url(); ?>contratos" class="simple-text">
+				<a href="<?php echo base_url(); ?>" class="simple-text">
 					Unimontes
 				</a>
 			</div>
@@ -56,33 +56,10 @@
 	                <li id="link_contratos">
 	                    <a href="<?php echo base_url(); ?>contratos">
 							<i class="material-icons">assignment</i>
-	                        <p>Contratos</p>
+	                        <p>Ver pedidos</p>
 	                    </a>
 	                </li>
-	                <li id="link_estagios">
-	                    <a href="<?php echo base_url(); ?>estagios">
-	                        <i class="material-icons">work</i>
-	                        <p>Estágios</p>
-	                    </a>
-	                </li>
-	                <li id="link_usuarios">
-	                    <a href="<?php echo base_url(); ?>usuarios">
-	                        <i class="material-icons">person</i> 
-	                        <p>Usuários</p>
-	                    </a>
-	                </li>
-	                <li id="link_unidades">
-	                    <a href="<?php echo base_url(); ?>unidades">
-	                        <i class="material-icons">description</i>
-	                        <p>Unidades</p>
-	                    </a>
-	                </li>
-	                <li id="link_areas">
-	                    <a href="<?php echo base_url(); ?>areas">
-	                        <i class="material-icons">language</i>
-	                        <p>Áreas</p>
-	                    </a>
-	                </li>
+	                
 	            </ul>
 	    	</div>
 	    </div>
@@ -101,12 +78,6 @@
 					</div>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
-							<li>
-								<a href="<?php echo base_url(); ?>configuracoes">
-									<i class="material-icons">settings</i>
-									<p >Config.</p>
-								</a>
-							</li>
 							<li>
 								<a href="<?php echo base_url(); ?>sair">
 									<i class="material-icons">exit_to_app</i>

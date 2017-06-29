@@ -107,6 +107,18 @@ class Login_model extends CI_Model{
 		    }
 		}
 
+		public function getcursocoord($usuario){
+			$array='';
+	    	$this->db->select("curso");
+			$this->db->from("coord");
+			$this->db->where('usuario', $usuario);
+			$sql = $this->db->get();
+			if($sql->num_rows() > 0){
+				$array = $sql->result()->curso;
+			}
+
+			return $array;
+		}
 
 		
 		

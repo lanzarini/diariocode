@@ -6,6 +6,7 @@ class Login extends CI_Controller{
 		parent::__construct();
 
 		$this->load->model('Login_model');
+		$this->load->model('Giz_model');
 		// $this->load->library('encrypt');
 
 		if(isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] == 1){
@@ -58,7 +59,8 @@ class Login extends CI_Controller{
 			elseif($retorno == '2'){
 				$usuarios = array(
 					'tipo_usuario' => $retorno,
-					'usuario' => $usuario 
+					'usuario' => $usuario,
+					'curso'=> $this->Login_model->getcursocoord($usuario)
 				);
 
 				$this->session->set_userdata($usuarios);
@@ -71,13 +73,14 @@ class Login extends CI_Controller{
 			elseif($retorno  == '3'){
 				$usuarios = array(
 					'tipo_usuario' => $retorno,
-					'usuario' => $usuario 
+					'usuario' => $usuario,
+					'nome'=>$this->Giz_model->getnomeprof($usuario)
 				);
 
 				$this->session->set_userdata($usuarios);
 
 				echo "3";
-			}else{var_dump($retorno);}
+			}else{echo "0";}
 		}
 	}
 }
